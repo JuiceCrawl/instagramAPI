@@ -1,16 +1,28 @@
 (function(){
-
 	var app = angular.module('myInstagramApp',[]);
 	app.controller('InstagramController',['$scope',function($scope){
 
-	var follower_data
-	
-		$scope.company_name = ["Pressed Juicery", "Juice Press","Well and Good","Juice Generation", "Class Pass", "Oh She Glows", "Athleta", "Lululemon"];
-		$scope.current_company = "Pressed Juicery";
+		//access users who follow companies via Jake's token	
+		var object = {"Pressed Juicery":12510488, "Juice Press":230881832,"Well and Good":2466792,"Juice Generation":217309140, "Class Pass":830096458, "Oh She Glows":44115468, "Athleta":183890290, "Lululemon":2134762};
 
-		$scope.followers = "Test Names Go Here"
+		//List company names to Access in DOM	
+			$scope.company_name = Object.keys(object)
+			$scope.current_company = "Pressed Juicery";
+		//List follower names to Access in DOM		
+			$scope.followers = "Test Names Go Here"
 
-		
+		//access user company selection
+		$scope.changedValue=function(item){
+		//change id based on user company selection	
+	    	var follower_data = "https://api.instagram.com/v1/users/"+(object[item])+"/followed-by?access_token=400705.e4a7751.a9862f7be60c4fafa329aa11af0001ac&callback=?"
+	    	jQuery.getJSON( follower_data, function(data){
+	    		for(i in data['data']){
+	    			console.log(data['data'][i]['id'])
+	    		}
+
+	    	})
+    	}    
+    	
 
 	}]);
 

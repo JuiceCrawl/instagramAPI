@@ -11,6 +11,8 @@
     <script type="text/javascript" src="js/app/angular.min.js"></script>
     <script type="text/javascript" src="js/app/app.js"></script>
     <script type="text/javascript" src="js/instagram.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
 </head>
 
@@ -20,7 +22,7 @@
 			<h1>Who Follows Who?</h1>
 			<form>
 			 <p>Select a company to see who follows them.</p>
-			  <select ng-model="current_company" ng-options="c as c for c in company_name">{{company_name}}</select>
+			  <select ng-model="current_company"  ng-change="changedValue(current_company)"  ng-options="c as c for c in company_name">{{company_name}}</select>
 			</form>
 		</div>
 		<div id="followers_list">
