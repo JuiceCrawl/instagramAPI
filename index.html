@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myInstagramApp">
+
+<head>
+	<meta charset="utf-8">
+    <title>Who Follows Who?</title>
+<!-- CSS -->  
+    <link type="text/css" href="css/instagram.css" rel="stylesheet">
+
+<!-- Script -->
+    <script type="text/javascript" src="js/app/angular.min.js"></script>
+    <script type="text/javascript" src="js/app/app.js"></script>
+    <script type="text/javascript" src="js/instagram.js"></script>
+
+</head>
+
+<body>
+  <div id="main" ng-controller="InstagramController">
+		<div>
+			<h1>Who Follows Who?</h1>
+			<form>
+			 <p>Select a company to see who follows them.</p>
+			  <select ng-model="current_companies" ng-options="c as c for c in companies">{{companies}}</select>
+			</form>
+		</div>
+		<div id="followers_list">
+			<div>
+				<p ng-model="followers">{{followers}}</p>
+			</div>
+		</div>
+  </div>
+</body>
+</html>

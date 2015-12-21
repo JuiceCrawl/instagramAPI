@@ -1,0 +1,38 @@
+#main {
+	text-align: center;
+	margin: auto;
+	background-color: #999;
+	font-family: sans-serif;
+
+
+}
+
+#main > div{
+	padding: 50px 10px 25px 10px;
+}
+
+#main h1{
+	color: #000;
+}
+
+#main p{
+	color: #262626;
+}
+#main select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	background: #fff no-repeat center;
+	background-size: 80px;
+	padding: 10px;
+	text-align: center;
+	font-size: 1.5em;
+
+}
+
+#followers_list{
+	background-color: #e6e6e6;
+}
+
