@@ -22,13 +22,17 @@
 			<h1>Who Follows Who?</h1>
 			<form>
 			 <p>Select a company to see who follows them.</p>
-			  <select ng-model="current_company"  ng-change="changedValue(current_company)"  ng-options="c as c for c in company_name">{{company_name}}</select>
+			  <select ng-model="current_company" ng-change="changedValue(current_company)"  ng-options="c as c for c in company_name">{{company_name}}</select>
 			</form>
 		</div>
 		<div id="followers_list">
 			<div>
 				<p ng-model="followers">{{followers}}</p>
 			</div>
+
+			<ol>
+ 				<li ng-repeat="follower in followers track by $index">{{ follower.username }}</li>
+			</ol>
 		</div>
   </div>
 </body>
